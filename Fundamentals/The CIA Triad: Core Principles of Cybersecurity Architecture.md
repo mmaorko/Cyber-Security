@@ -1,5 +1,5 @@
 # CIA Triad: Confidentiality, Integrity, and Availability
-The CIA Triad is the fundamental checklist for any cybersecurity architecture or IT project, ensuring that sensitive data is protected, systems are trustworthy, 
+The CIA Triad is the fundamental for any cybersecurity architecture or IT project, ensuring that sensitive data is protected, systems are trustworthy, 
 and resources are accessible. It consists of three core principles: Confidentiality, Integrity, and Availability.
 ## 1. Confidentiality
 Confidentiality ensures that sensitive data is only available to those authorized to see it. It is primarily enforced through two methods:
@@ -84,13 +84,18 @@ Because the same key is shared between parties, it is fast and efficient, but th
 
 </details>
 
-
 ## 2. Integrity
 Integrity is the quality that ensures a message or transaction is "true to itself" and has not been modified. If data is tampered with, the system must 
 be able to detect it.
-• Detection Tools: Technologies like digital signatures and message authentication codes (MACs) allow for comparing records to identify changes.
-• Immutability: A blockchain acts as a distributed ledger where records can be added but not changed or deleted, ensuring the history remains trustworthy. 
+
+**Detection Tools** 
+- Technologies like digital signatures and message authentication codes (MACs) allow for comparing records to identify changes.
+  
+**Immutability**
+- A blockchain acts as a distributed ledger where records can be added but not changed or deleted, ensuring the history remains trustworthy. 
 This prevents bad actors from deleting syslogs to hide their activities.
+---
+
 ## 3. Availability
 Availability means that systems and resources are consistently accessible to authorized users when they need them. This is often targeted by attacks intended to crash systems:
 
