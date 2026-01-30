@@ -188,6 +188,49 @@ It is considered one of the **most dangerous cyber threats** due to its ability 
 
 </details>
 
+<details>
+<summary><b>Spyware:</b> Spyware secretly tracks user activity, such as passwords, browsing history, or credit card information.</summary>
+
+### Example
+
+- Keyloggers or browser tracking malware.
+
+---
+
+</details>
+
+<details>
+<summary><b>Adware:</b> Adware is software that displays unwanted advertisements or annoys users, and sometimes can also steal user information.</summary>
+
+### Example
+
+- Pop-up ads or unwanted browser toolbars.
+
+---
+
+</details>
+
+<details>
+<summary><b>Rootkit:</b> Malware that hides deep in the system and gains administrative control without the user knowing, sometimes allowing other malware to be installed.</summary>
+
+### Example
+
+- Hacker-installed root access on Windows or Linux systems.
+
+---
+
+</details>
+
+<details>
+<summary><b>Botnet Malware:</b> Malware that allows hackers to control many infected devices at once, often used for DDoS attacks, spam campaigns, or scams.</summary>
+
+### Example
+
+- Thousands of infected computers attacking a website simultaneously.
+
+---
+
+</details>
 
 ## 2️. Network-Based Attacks
 
