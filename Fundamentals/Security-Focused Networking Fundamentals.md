@@ -362,7 +362,50 @@ If an application does not properly validate user input, an attacker can inject 
 
 </details>
 
-## 4. Basic Networking Essentials
+
+
+## 5. Ports, Protocols & Services
+Ports, Protocols, and Services that actually make the network run. Think of this as the "who, what, and where" of every connection
+
+**_Protocol:_** A standardized set of rules and formats that determine how data is transmitted, routed, and received across a 
+network (e.g., TCP, UDP, IP). It ensures that disparate systems can interpret the data correctly.
+**_Conclusion:_** The rules (the language both devices agree to speak).
+
+**_Port:_** A logical endpoint within an operating system used to identify a specific process or application. Ports range from 0 to 65,535, 
+categorized into Well-known, Registered, and Dynamic/Private ports.
+**_Conclusion:_** The door (where the data enters or leaves a device).
+
+**_Service:_** A software application or background process that "listens" on a specific port for incoming requests and executes tasks 
+accordingly (e.g., a web server like Nginx or a database like PostgreSQL).
+**_Conclusion:_** The program (the application waiting behind that door to do work).
+
+### **_Understanding these "Well-Known Ports" (0-1023) is essential for network administration and security auditing:_**
+
+| **Port** | **Protocol** | **Service**        | **Technical Function**                                                      |
+| -------- | ------------ | ------------------ | --------------------------------------------------------------------------- |
+| 21       | FTP          | File Transfer      | Used for command and control of file transfers between a client and server. |
+| 22       | SSH          | Secure Shell       | Provides an encrypted channel for secure remote login and data transfer.    |
+| 25       | SMTP         | Mail Transfer      | The standard protocol for routing and relaying email across the internet.   |
+| 53       | DNS          | Name Resolution    | Resolves human-readable hostnames (example.com) into IP addresses.          |
+| 80       | HTTP         | Hypertext Transfer | Used for transmitting unencrypted web traffic.                              |
+| 443      | HTTPS        | HTTP over TLS      | Encrypts web traffic using SSL/TLS to ensure data integrity and privacy.    |
+| 3389     | RDP          | Remote Desktop     | Enables a graphical interface for remote management of Windows systems.     |
+
+### Security Implications
+From a cybersecurity perspective, port management is a primary defense mechanism:
+
+- **_Attack Surface Management:_** Every open port represents a potential entry point. The more services you expose, the larger your Attack Surface becomes.
+
+- **_Reconnaissance (Footprinting):_** Threat actors use tools like Nmap or ZMap for Service Discovery. They identify open ports and "fingerprint" the
+  services behind them to find specific software versions.
+
+- **_Vulnerability Exploitation:_** If a service is outdated or misconfigured, it may be susceptible to CVEs (Common Vulnerabilities and Exposures),
+  allowing attackers to gain unauthorized access or execute remote code (RCE).
+
+
+
+
+## 5. Basic Networking Essentials
 
 ### TCP/IP Model
 
@@ -414,48 +457,6 @@ Routing: Routing table, static vs dynamic routing, default gateway.
 - SSID and authentication
 
 - Encryption: WPA2, WPA3
-
-
-
-
-## 5. Ports, Protocols & Services
-Ports, Protocols, and Services that actually make the network run. Think of this as the "who, what, and where" of every connection
-
-**_Protocol:_** A standardized set of rules and formats that determine how data is transmitted, routed, and received across a 
-network (e.g., TCP, UDP, IP). It ensures that disparate systems can interpret the data correctly.
-**_Conclusion:_** The rules (the language both devices agree to speak).
-
-**_Port:_** A logical endpoint within an operating system used to identify a specific process or application. Ports range from 0 to 65,535, 
-categorized into Well-known, Registered, and Dynamic/Private ports.
-**_Conclusion:_** The door (where the data enters or leaves a device).
-
-**_Service:_** A software application or background process that "listens" on a specific port for incoming requests and executes tasks 
-accordingly (e.g., a web server like Nginx or a database like PostgreSQL).
-**_Conclusion:_** The program (the application waiting behind that door to do work).
-
-### **_Understanding these "Well-Known Ports" (0-1023) is essential for network administration and security auditing:_**
-
-| **Port** | **Protocol** | **Service**        | **Technical Function**                                                      |
-| -------- | ------------ | ------------------ | --------------------------------------------------------------------------- |
-| 21       | FTP          | File Transfer      | Used for command and control of file transfers between a client and server. |
-| 22       | SSH          | Secure Shell       | Provides an encrypted channel for secure remote login and data transfer.    |
-| 25       | SMTP         | Mail Transfer      | The standard protocol for routing and relaying email across the internet.   |
-| 53       | DNS          | Name Resolution    | Resolves human-readable hostnames (example.com) into IP addresses.          |
-| 80       | HTTP         | Hypertext Transfer | Used for transmitting unencrypted web traffic.                              |
-| 443      | HTTPS        | HTTP over TLS      | Encrypts web traffic using SSL/TLS to ensure data integrity and privacy.    |
-| 3389     | RDP          | Remote Desktop     | Enables a graphical interface for remote management of Windows systems.     |
-
-### Security Implications
-From a cybersecurity perspective, port management is a primary defense mechanism:
-
-- **_Attack Surface Management:_** Every open port represents a potential entry point. The more services you expose, the larger your Attack Surface becomes.
-
-- **_Reconnaissance (Footprinting):_** Threat actors use tools like Nmap or ZMap for Service Discovery. They identify open ports and "fingerprint" the
-  services behind them to find specific software versions.
-
-- **_Vulnerability Exploitation:_** If a service is outdated or misconfigured, it may be susceptible to CVEs (Common Vulnerabilities and Exposures),
-  allowing attackers to gain unauthorized access or execute remote code (RCE).
-
 
 
 
