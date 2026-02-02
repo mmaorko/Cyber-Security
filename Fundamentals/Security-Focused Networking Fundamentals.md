@@ -447,8 +447,30 @@ In practice, networks often use the TCP/IP model:
 Routing: Routing table, static vs dynamic routing, default gateway.
 
 ### VLAN
+A VLAN is a logical group of workstations, servers, and network devices that appear to be on the same local area network (LAN) despite their 
+geographical distribution.
 
-- Logical network segmentation for better security and performance.
+**_In simple terms:_** In a standard LAN, all devices connected to a physical switch can "talk" to each other. With a VLAN, you can use software to divide one physical switch into multiple virtual networks. This allows you to isolate departments (e.g., IT, HR, Finance) even if they are plugged into the same hardware.
+
+#### Why use a VLAN? (Key Functions)
+**_Security:_** You can isolate sensitive data (like Finance or Management) from general users.
+
+**_Performance:_** It reduces "Broadcast Traffic" by breaking one large broadcast domain into smaller ones, which improves network speed.
+
+**_Flexibility/Segmentation:_** You can change a user’s network group through software configuration without moving physical cables.
+
+#### VLAN Security Auditing (Security Insight)
+During a network audit, the following vulnerabilities are checked:
+
+**_VLAN Hopping Attacks:_** As discussed earlier, attackers try to jump from a low-security VLAN (like Guest Wi-Fi) to a high-security one.
+
+**_Fix:_** Disable DTP (Dynamic Trunking Protocol) on user ports and shut down unused ports.
+
+**_The Default VLAN (VLAN 1):_** Most switches use VLAN 1 as the default. Hackers target this because it is predictable.
+
+**_Fix:_* Change the management and native VLAN to a non-standard ID (e.g., VLAN 999).
+
+**_Access Control:_** Even with VLANs, you need a Layer 3 device (Router or Firewall) to control traffic between VLANs. Without ACLs (Access Control Lists), segmentation is useless.
 
 ### Wireless Networking
 
@@ -458,7 +480,64 @@ Routing: Routing table, static vs dynamic routing, default gateway.
 
 - Encryption: WPA2, WPA3
 
+### Memory Management
+Memory Management is the process of intelligently controlling a computer's RAM. Its primary roles are to allocate space for new programs, use techniques like Paging and Virtual Memory to run large applications on limited RAM, and ensure that one program cannot interfere with another’s data. The biggest security threat here is the Buffer Overflow, where attackers send excessive data to take control of the system. To prevent this, operating systems use ASLR to constantly randomize memory locations and DEP to block malicious code execution. Simply put, it ensures the system’s speed, stability, and security.
+
+
+## Linux Fundamentals (Very Important for Cyber Security)
+
+In the cybersecurity world, Linux is not just an operating system — it is the foundation. Most servers, firewalls, SIEM tools, cloud platforms, and security appliances are built on Linux. That is why understanding Linux is not optional for a security specialist; it is mandatory.
+
+### Core Navigation and Awareness
+
+Basic commands like ls, cd, and pwd might look simple, but they are critical during investigations. A security analyst constantly moves between directories to inspect configuration files, application folders, and log locations. Using ls -la helps identify hidden files, which attackers often use to hide malicious scripts or backdoors. Knowing exactly where you are (pwd) prevents mistakes during incident response or privilege escalation testing.
+
+### Searching and Threat Hunting
+
+Real security work is about finding patterns inside massive data. This is where grep and find become powerful. grep is heavily used during log analysis to detect failed login attempts, suspicious commands, or indicators of compromise. On the other hand, find helps locate sensitive or dangerous files such as SUID binaries, recently modified files, or unauthorized scripts. These tools are essential for both blue team investigations and red team enumeration.
+
+### Process Monitoring and Live Attack Detection
+
+Commands like ps, top, and htop allow security professionals to see what is actually running on the system. During an attack, malicious processes often reveal themselves through abnormal CPU or memory usage. Crypto-mining malware, reverse shells, or unauthorized services can often be detected by closely monitoring running processes. htop is especially useful because it shows process trees and makes suspicious behavior easier to spot.
+
+### Network Visibility and Connection Analysis
+
+From a security perspective, networking is where compromise becomes visible. Tools such as netstat and ss show open ports, active connections, and listening services. This information is crucial for detecting backdoors, command-and-control connections, and unauthorized services. A system with unknown listening ports is almost always a red flag.
+
+### Permissions, Ownership, and Privilege Control
+
+Linux security is largely based on permissions. Commands like chmod and chown directly control who can read, write, or execute files. Misconfigured permissions are a common cause of privilege escalation. For example, world-writable scripts or improperly owned configuration files can allow attackers to gain root access. Understanding permissions means understanding how attackers abuse them.
+
+### Linux Directory Structure from a Security View
+
+Certain directories are significant for security work. The /etc directory contains configuration files for users, services, and authentication mechanisms; a small change here can compromise the entire system. The /var directory holds variable data, including logs and web files, making it a key location for forensic analysis. The /proc directory provides real-time information about running processes and system resources, which can be extremely valuable when analyzing suspicious behavior.
+
+### Logs: The Backbone of Security Monitoring
+
+Logs are the primary source of truth in cybersecurity. Authentication logs, system logs, and web server logs—mostly stored under /var/log/—allow analysts to reconstruct attacks, identify timelines, and understand attacker behavior. Without logs, detection and investigation become nearly impossible.
 
 
 
+## Windows Fundamentals (Important for Cyber Security)
 
+Windows remains the most widely used operating system in corporate environments. Because of this, a cyber security specialist must understand Windows internals to effectively detect, analyze, and respond to threats.
+
+### Windows Internals (Basic Understanding)
+
+Processes represent programs that are currently running on the system. By monitoring processes through tools like Task Manager or Process Explorer, security analysts can identify unknown or suspicious activity. Abnormal CPU or memory usage often indicates malware or unauthorized execution.
+
+Services are background components that start automatically or run continuously to support system and application functionality. Malware frequently disguises itself as a legitimate service to maintain persistence. Understanding which services start at boot and under which account they run is critical for threat detection.
+
+### Windows Registry (Security Perspective)
+
+The Windows Registry is a centralized configuration database for the operating system. From a security standpoint, it is a favorite persistence mechanism for malware.
+
+Attackers commonly abuse registry Run keys and startup entries to ensure malicious code executes every time the system boots. This allows malware to survive reboots while remaining stealthy and difficult to detect.
+
+### Security Insight
+
+- Unknown or unsigned processes may indicate compromise
+
+- Suspicious services often hide in plain sight
+
+- Registry-based persistence is common in real-world malware
