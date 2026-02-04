@@ -1,7 +1,7 @@
 - Monitor security alerts and events using SIEM and security tools
 - Analyse and respond to security incidents and potential threats(Strong understanding of security principles and threat detection)
 - Knowledge of networking concepts (TCP/IP, firewalls, VPNs, DNS)
-- Familiarity with endpoint security and monitoring tools with cloud security (AWS, Azure, or GCP)
+- Familiarity with endpoint security and monitoring tools with cloud security (AWS, Azure, or GCP with Site Recovery and Recovery Services)
 - Knowledge of vulnerability scanning and remediation tools
 - Experience with security frameworks (NIST, ISO 27001, CIS)
 - Conduct initial investigation and triage of security alerts
@@ -11,3 +11,5 @@
 - Support security policy implementation and compliance requirements
 - Maintain accurate incident reports and security documentation
 - Participate in security assessments and reviews
+- VMware technologies and Familiarity with the Microsoft Defender suite
+- EDR/XDR and endpoint protection solutions
