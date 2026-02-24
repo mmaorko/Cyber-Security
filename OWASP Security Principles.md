@@ -1,4 +1,6 @@
 # Open Web Application Security Project(OWASP) Security Principles
+OWASP helps developers, security professionals, and organizations understand potential threats and adopt security best practices. OWASP maintains a list of the ten most critical web application security risks, along with effective processes, procedures, and controls to mitigate them.
+
 ## 1. Minimize the Attack Surface Area
 The goal here is simple: reduce the number of ways a threat actor can get in. An "attack surface" is the sum of all potential vulnerabilities. By disabling unnecessary 
 software features or restricting access, you close off the "attack vectors"—like phishing or weak passwords—that hackers use to penetrate defenses.
