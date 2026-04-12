@@ -159,3 +159,51 @@ Monitor:
 - Balancing security with usability
 - Keeping up with evolving threats
 - Resource and budget constraints
+
+## Key Concepts of Cloud Security and Differences from Traditional Networks
+### 1. Shared Responsibility Model
+The Shared Responsibility Model is one of the most important concepts in cloud security. In this model, both the cloud service provider (e.g., Google Cloud) and the customer (organization) share security responsibilities.
+
+#### **_Cloud Provider Responsibilities:_**
+- Securing physical data centers
+- Maintaining hardware infrastructure
+- Protecting network infrastructure and hypervisors
+
+#### **_Customer Responsibilities:_**
+- Data encryption
+- Identity and Access Management (IAM)
+- Virtual network configuration
+- Application security
+### 2. Server Baseline Image (Golden Image)
+A key strength of cloud network hardening is the use of Baseline Images (also known as Golden Images).
+
+#### **_How it works:_**
+- A secure and standardized server configuration is created
+- #### **_This includes:_**
+   - Latest security patches
+   - Disabled unnecessary ports and services
+   - Secure system configurations
+- A snapshot (image) of this configuration is then stored
+#### **_Security Benefits:_**
+   - Detects unauthorized or unverified changes
+   - Enables quick identification of malicious activity
+   - Allows rapid replacement of compromised servers
+   - Ensures consistent and secure deployments
+
+### 3. Cloud Network Segmentation
+
+Network segmentation in the cloud is essential and more flexible compared to traditional environments.
+
+#### **_Micro-Segmentation:_**
+- Each application or service is isolated
+- Typically implemented using:
+  - Virtual Private Cloud (VPC)
+  - Subnets
+#### **_Isolation:_**
+   - Internal systems are separated from public-facing applications
+#### **_Security Benefits:_**
+   - Limits the spread of attacks
+   - Protects sensitive data
+   - Prevents attackers from moving laterally within the network
+
+**_Example: If a public-facing web application is compromised, proper segmentation ensures that attackers cannot directly access backend databases._**
